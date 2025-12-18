@@ -1,6 +1,10 @@
+import Navbar from "./components/Navbar"
+
 const App = () => {
   return (
-    <h1>hello this is ei</h1>
+    <main>
+      <Navbar />
+    </main>
   )
 }
 
