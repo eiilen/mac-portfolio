@@ -23,8 +23,8 @@ const Resume = () => {
     </div>
 
     <Document file="files/resume.pdf">
-        <Page pageNumber={1} renderTextLayer renderAnnotationLayer />
-      </Document>
+      <Page pageNumber={1} renderTextLayer renderAnnotationLayer />
+    </Document>
 
     </>
   )

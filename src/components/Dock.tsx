@@ -1,11 +1,13 @@
 import { Tooltip } from "react-tooltip"
 import { useRef } from "react"
-import { dockApps } from "../constants"
+import { dockApps, locations } from "../constants"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import useWindowStore from "../store/window"
+import useLocationStore from "../store/location"
 
 const Dock = () => {
+    const { setActiveLocation, resetActiveLocation } = useLocationStore()
     const { openWindow, closeWindow, windows } = useWindowStore() as any
     const dockRef = useRef(null)
 
@@ -57,18 +59,25 @@ const Dock = () => {
         }
     }, [])
 
-    const toggleApp = (app: any) => {
+    const handleClickApp = (app: any) => {
         if (!app.canOpen) return
 
-        const window = windows[app.id]
-
+        const window = app.id === "trash" ? windows["finder"] : windows[app.id]
+        
         if (!window) return
         
-        if (window.isOpen) {
-            closeWindow(app.id)
-        } else {
-            openWindow(app.id)
-        }
+        // if (window.isOpen) {
+        //     closeWindow(app.id)
+        // } else {
+            if (app.id === "trash") {
+                const trash = locations.trash
+                setActiveLocation(trash)
+                openWindow("finder")
+            } else {
+                resetActiveLocation()
+                openWindow(app.id)
+            }
+        // }
     }
   return (
     <section id="dock">
@@ -81,7 +90,7 @@ const Dock = () => {
                         data-tooltip-content={app.name}
                         data-tooltip-delay-show={150}
                         disabled={!app.canOpen}
-                        onClick={() => toggleApp({id: app.id, canOpen: app.canOpen})}
+                        onClick={() => handleClickApp({id: app.id, canOpen: app.canOpen})}
                         >
                         <img src={`/images/${app.icon}`} alt={app.name} loading="lazy" className={app.canOpen ? '' : 'opacity-60'} />
                     </button>
