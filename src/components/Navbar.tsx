@@ -4,9 +4,9 @@ import useWindowStore from '../store/window'
 import useLocationStore from '../store/location'
 
 const Navbar = () => {
-    const { openWindow } = useWindowStore()
-    const { setActiveLocation } = useLocationStore()
-    const handleClick = (type) => {
+    const { openWindow } = useWindowStore() as any
+    const { setActiveLocation } = useLocationStore() as any
+    const handleClick = (type: string) => {
         if (type === "finder") { setActiveLocation(locations.work) }
         openWindow(type)
     }

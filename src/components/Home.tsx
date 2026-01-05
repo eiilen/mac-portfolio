@@ -7,10 +7,10 @@ import useLocationStore from "../store/location"
 const projects = locations.work?.children ?? []
 
 const Home = () => {
-    const { setActiveLocation } = useLocationStore()
-    const { openWindow } = useWindowStore()
+    const { setActiveLocation } = useLocationStore() as any
+    const { openWindow } = useWindowStore() as any
 
-    const handleOpenProjectFinder = (project) => {
+    const handleOpenProjectFinder = (project: any) => {
         setActiveLocation(project)
         openWindow("finder")
     }

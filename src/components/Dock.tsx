@@ -7,8 +7,8 @@ import useWindowStore from "../store/window"
 import useLocationStore from "../store/location"
 
 const Dock = () => {
-    const { setActiveLocation, resetActiveLocation } = useLocationStore()
-    const { openWindow, closeWindow, windows } = useWindowStore() as any
+    const { setActiveLocation, resetActiveLocation } = useLocationStore() as any
+    const { openWindow, windows } = useWindowStore() as any
     const dockRef = useRef(null)
 
     useGSAP(() => {
