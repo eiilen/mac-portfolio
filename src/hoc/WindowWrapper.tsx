@@ -5,9 +5,9 @@ import { useGSAP } from "@gsap/react"
 import { Draggable } from "gsap/Draggable"
 
 
-const WindowWrapper = (Component, windowKey) => {
-    const Wrapped = (props) => {
-        const { focusWindow, windows }  = useWindowStore()
+const WindowWrapper = (Component: any, windowKey: any) => {
+    const Wrapped = (props: any) => {
+        const { focusWindow, windows }  = useWindowStore() as any
         const { isOpen, zIndex }  = windows[windowKey]
         const ref = useRef<HTMLElement | null>(null)
         

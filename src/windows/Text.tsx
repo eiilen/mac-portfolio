@@ -3,7 +3,7 @@ import WindowWrapper from "../hoc/WindowWrapper"
 import useWindowStore from "../store/window"
 
 const Text = () => {
-    const { windows } = useWindowStore()
+    const { windows } = useWindowStore() as any
     const data = windows.txtfile?.data
 
     if (!data) return null

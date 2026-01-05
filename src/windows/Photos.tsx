@@ -5,7 +5,7 @@ import useWindowStore from "../store/window"
 import { gallery, photosLinks } from "../constants"
 
 const Photos = () => {
-  const { openWindow } = useWindowStore()
+  const { openWindow } = useWindowStore() as any
   return (
     <>
     <div id="window-header">

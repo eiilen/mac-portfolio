@@ -3,7 +3,7 @@ import WindowWrapper from "../hoc/WindowWrapper"
 import useWindowStore from "../store/window"
 
 const Image = () => {
-    const { windows } = useWindowStore()
+    const { windows } = useWindowStore() as any
     const data = windows.imgfile?.data
 
     if (!data) return null
