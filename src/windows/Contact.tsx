@@ -11,7 +11,7 @@ const Contact = () => {
     </div>
 
     <div className="p-5 space-y-5">
-        <img src="/images/hua_cheng_4.png" alt="huacheng" className="w-20 rounded-b-full" />
+        <img src="images/hua_cheng_4.png" alt="huacheng" className="w-20 rounded-b-full" />
         
         <h3>Let's Connect</h3>
         <p>Got shrines to burn? Heavenly officials to challenge? I'm in. But I only prioritize gege</p>

@@ -24,7 +24,7 @@ const Home = () => {
             {projects.map((project) => (
                 <li key={project.id} className={`group folder ${project.position}`}
                     onClick={() => handleOpenProjectFinder(project)}>
-                    <img src="/images/folder.png" alt={project.name} />
+                    <img src="images/folder.png" alt={project.name} />
                     <p>{project.name}</p>
                 </li>
             ))}

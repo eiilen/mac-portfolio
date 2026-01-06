@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav>
         <div>
-            <img src='/images/logo.svg' />
+            <img src='images/logo.svg' />
             <p className='font-bold'>Hua Cheng's Portfolio</p>
 
             <ul>

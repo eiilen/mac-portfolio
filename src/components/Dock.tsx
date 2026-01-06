@@ -92,7 +92,7 @@ const Dock = () => {
                         disabled={!app.canOpen}
                         onClick={() => handleClickApp({id: app.id, canOpen: app.canOpen})}
                         >
-                        <img src={`/images/${app.icon}`} alt={app.name} loading="lazy" className={app.canOpen ? '' : 'opacity-60'} />
+                        <img src={`images/${app.icon}`} alt={app.name} loading="lazy" className={app.canOpen ? '' : 'opacity-60'} />
                     </button>
                 </div>
             ))}

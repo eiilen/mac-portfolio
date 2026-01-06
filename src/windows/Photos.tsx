@@ -33,7 +33,7 @@ const Photos = () => {
       <div className="gallery">
           <ul>
             {gallery.map((photo) => (
-              <li key={photo.id} onClick={() => openWindow("imgfile", {id: photo.id, name: "Gallery image", icon: "/images/image.png", kind: "file", fileType: "img", imageUrl: photo.img})}>
+              <li key={photo.id} onClick={() => openWindow("imgfile", {id: photo.id, name: "Gallery image", icon: "images/image.png", kind: "file", fileType: "img", imageUrl: photo.img})}>
                 <img src={photo.img} alt={`gallery image ${photo.id}`} />
               </li>
             ))}
